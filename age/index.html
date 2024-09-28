@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Group Classifier</title>
+    <script>
+        function classifyAgeGroup() {
+            // Prompt user to enter their age
+            let age = prompt("Enter your age:");
+
+            // Check if the input is a valid number
+            if (isNaN(age) || age === "") {
+                alert("Invalid input! Please enter a numeric value.");
+                return;
+            }
+
+            // Convert input to a number
+            age = parseInt(age);
+
+            // Classify the age group
+            let ageGroup;
+            if (age >= 0 && age <= 12) {
+                ageGroup = "Child (0-12)";
+            } else if (age >= 13 && age <= 19) {
+                ageGroup = "Teenager (13-19)";
+            } else if (age >= 20 && age <= 64) {
+                ageGroup = "Adult (20-64)";
+            } else if (age >= 65) {
+                ageGroup = "Senior (65 and above)";
+            } else {
+                alert("Please enter a valid age.");
+                return;
+            }
+
+            // Display the age group
+            alert("You belong to the age group: " + ageGroup);
+        }
+    </script>
+</head>
+<body>
+    <h1>Age Group Classifier</h1>
+    <button onclick="classifyAgeGroup()">Classify Age Group</button>
+</body>
+</html>
